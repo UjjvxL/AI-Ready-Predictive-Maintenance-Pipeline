@@ -2,154 +2,209 @@
 ### L&T EduTech | Larsen & Toubro Limited — Project Statement 6
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
-[![Database-MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248.svg?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Database-SQLite](https://img.shields.io/badge/Warehouse-SQLite3-003B57.svg?logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Database-MongoDB](https://img.shields.io/badge/NoSQL-MongoDB-47A248.svg?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![Analytics-PowerBI](https://img.shields.io/badge/Analytics-Power%20BI-F2C811.svg?logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
 [![Data-Completeness-100%](https://img.shields.io/badge/Data%20Completeness-100%25-brightgreen.svg)]()
-[![Model-ROC--AUC-1.0000](https://img.shields.io/badge/AI%20ROC--AUC-1.0000-success.svg)]()
+[![Model-F1-0.985](https://img.shields.io/badge/AI%20Macro%20F1-0.985-success.svg)]()
 [![Status-Submission--Ready](https://img.shields.io/badge/Status-Submission%20Ready-blueviolet.svg)]()
 
 ---
 
 ## 📌 Executive Summary
-Industries require clean, validated, and high-quality datasets before deploying Artificial Intelligence for Condition-Based Predictive Maintenance (PdM). Raw Industrial IoT (IIoT) machine telemetry is inherently degraded by missing observation gaps, electrical impulse spikes, non-uniform timestamps, and absence of physical degradation context.
+Predictive maintenance AI is only as good as the data under it. Raw machine sensor data is rarely usable as delivered: sensors drop out, units differ between machines, timestamps arrive in multiple formats, and failures are recorded in separate enterprise systems.
 
-This project delivers an enterprise-grade, end-to-end **AI-Ready Data Engineering Pipeline** in accordance with **L&T EduTech Project Statement 6**. The pipeline ingests 73,080 raw telemetry records from 10 mission-critical industrial assets (Centrifugal Pumps, CNC Spindles, Compressors), stores raw and clean streams in **MongoDB**, performs automated cleaning and spline reconstruction, extracts **42 physics-informed features**, and feeds an enterprise **Power BI Star Schema** dashboard.
+In accordance with **L&T EduTech Project Statement 6**, this repository delivers an end-to-end, reproducible data engineering pipeline that turns messy multi-source industrial telemetry into a trustworthy, model-ready dataset, backed by a Power BI Star Schema and a comprehensive technical documentation report.
+
+📄 **Download the Final Documentation Report (PDF):**  
+[**`AI_Ready_Data_Engineering_Pipeline_Final_Documentation.pdf`**](reports/AI_Ready_Data_Engineering_Pipeline_Final_Documentation.pdf)
 
 ---
 
-## 📁 Repository Deliverables & Architecture
+## 📁 Repository Structure & Deliverables
 
 ```
-predictive-maintenance-pipeline/
+AI-Ready-Predictive-Maintenance-Pipeline/
 ├── data/
 │   ├── raw/
-│   │   └── raw_machine_telemetry.csv            # 73,080 raw telemetry records with industrial flaws
+│   │   ├── sensor_readings.csv          # 57,311 raw hourly readings across 20 machines with 7 defect classes
+│   │   ├── maintenance_logs.json        # 95 semi-structured work orders (37 failures, 58 preventive)
+│   │   └── machine_master.csv           # Asset register for 20 machines (pumps, compressors, motors, turbines)
 │   ├── processed/
-│   │   ├── cleaned_machine_telemetry.parquet    # 100% complete validated dataset (zero nulls)
-│   │   ├── cleaned_machine_telemetry.csv
-│   │   ├── engineered_features.parquet          # 42 kinematic & thermodynamic features
-│   │   └── engineered_features.csv
-│   └── ai_ready/
-│       ├── X_train.parquet, X_val.parquet, X_test.parquet
-│       └── y_train.parquet, y_test.parquet      # Zero-leakage machine lifecycle partitions
+│   │   └── cleaned_sensor_data.csv      # 55,576 validated rows, 0 nulls, 0 duplicates, 0 out-of-range
+│   ├── ai_ready_dataset.csv             # 54,159 rows x 59 engineered features with RUL and 72h targets
+│   ├── ai_ready_dataset_scaled.csv      # Leakage-safe StandardScaler applied strictly to train partition
+│   └── warehouse.db                     # Queryable SQLite warehouse (dim_machine, fact_maintenance, fact_sensor_clean)
 ├── src/
-│   ├── generate_dataset.py                      # Multi-machine telemetry simulator with physical degradation
-│   ├── mongodb_handler.py                       # MongoDB schema validation & document store handler
-│   ├── cleaning_validation.py                   # Deduplication, domain boundaries, and spline imputation
-│   ├── feature_engineering.py                   # 3D vibration, Crest Factor, Kurtosis, and Health Index
-│   ├── ai_preparation.py                        # Temporal partitioning, RobustScaler, and AI benchmarking
-│   ├── generate_visual_artifacts.py             # Matplotlib publication figures generator
-│   ├── generate_full_submission_docx.py         # Word (.docx) report builder with L&T corporate theme
-│   └── pipeline.py                              # Master End-to-End Pipeline Orchestrator
-├── dashboard/
-│   ├── powerbi_data_model_spec.md               # Star Schema architecture & 15+ DAX measures
-│   └── dashboard_preview.html                   # Interactive standalone dark-mode web dashboard
+│   ├── generate_data.py                 # Multi-source simulator with realistic physics and injected defects
+│   ├── pipeline.py                      # 8-rule validation, 2-stage imputation, 79->59 pruning, and warehouse ETL
+│   ├── model_check.py                   # Random Forest benchmarks (Raw vs Engineered) & RUL regression
+│   ├── dashboard.py                     # Exports Star Schema CSVs for Power BI and dashboard rendering
+│   └── mongo_store.py                   # MongoDB document store with time-series collections & aggregation pipelines
+├── powerbi/                             # Star Schema tables for Power BI Desktop
+│   ├── dim_machine.csv
+│   ├── fact_sensor_hourly.csv
+│   ├── fact_sensor_daily.csv
+│   ├── fact_maintenance.csv
+│   ├── data_quality_scorecard.csv
+│   ├── data_quality_issues.csv
+│   └── feature_importance.csv
+├── figures/                             # 13 high-resolution publication and dashboard figures
+│   ├── fig01_pipeline_architecture.png
+│   ├── fig02_temperature_cleaning_m004.png
+│   ├── fig03_defects_by_category.png
+│   ├── fig04_imputation_error_comparison.png
+│   ├── fig05_correlation_matrix.png
+│   ├── fig06_vibration_envelope.png
+│   ├── fig07_rul_distribution.png
+│   ├── fig08_top_predictive_features.png
+│   ├── fig09_model_precision_recall_f1.png
+│   ├── fig10_dashboard_page1_data_quality.png
+│   ├── fig11_dashboard_page2_machine_health.png
+│   ├── fig12_fleet_vibration_heatmap.png
+│   └── fig13_machine_m001_sensor_trends.png
 ├── reports/
-│   ├── L_and_T_EduTech_Project_6_Predictive_Maintenance_Final_Report.pdf   # ⭐ Submission PDF Report
-│   ├── L_and_T_EduTech_Project_6_Predictive_Maintenance_Final_Report.docx  # Editable Word Document
-│   ├── figures/                                 # High-resolution diagnostic figures (fig1 to fig4)
-│   └── ai_benchmark_metrics.json                # Verified model evaluation metrics
-└── docs/
-    ├── feature_engineering_report.md            # Detailed mathematical & signal physics report
-    └── final_technical_documentation.md         # Comprehensive formal engineering report
+│   ├── AI_Ready_Data_Engineering_Pipeline_Final_Documentation.pdf   # ⭐ Final Submission PDF Report
+│   ├── AI_Ready_Data_Engineering_Pipeline_Final_Documentation.docx  # Editable Submission Word Document
+│   ├── pipeline_stats.json              # Traceable execution metrics
+│   ├── imputation_evaluation.csv        # Hide-and-recover empirical imputation error benchmark
+│   ├── feature_importance.csv           # Top predictive feature rankings
+│   ├── feature_catalog.csv              # Full 79 candidate feature data dictionary
+│   ├── model_baseline.json              # Model evaluation metrics
+│   ├── scaler_params.json               # Train-set standardization parameters
+│   └── pipeline.log                     # Step-by-step execution log
+└── requirements.txt
 ```
 
 ---
 
-## ⚙️ System Architecture Pipeline
+## ⚙️ Pipeline Architecture
 
 ```mermaid
 flowchart TD
-    subgraph S1["1. Telemetry Ingestion"]
-        P1["Centrifugal Pumps"] & P2["CNC Spindles"] & P3["Compressors"] --> RAW["Raw IoT Stream\n(73,080 Records)"]
+    subgraph S1["1. Multi-Source Ingestion"]
+        SENS["sensor_readings.csv\n(57,311 rows)"]
+        MAINT["maintenance_logs.json\n(95 events)"]
+        MAST["machine_master.csv\n(20 machines)"]
     end
 
-    subgraph S2["2. NoSQL Data Store"]
-        RAW --> MONGO[("MongoDB\nraw_telemetry")]
+    subgraph S2["2. Ordered Validation Rules"]
+        SENS & MAINT & MAST --> R1["Rule 1: ID Trim & Standardize"]
+        R1 --> R2["Rule 2: Parse 3 Mixed Timestamp Formats"]
+        R2 --> R3["Rule 3: Purge Duplicates on (machine, hour)"]
+        R3 --> R4["Rule 4: Convert deg F to deg C (M004, M011, M017)"]
+        R4 --> R5["Rule 5: Physical Bounds Enforcement"]
+        R5 --> R6["Rule 6: Stuck Sensor Detection (>=10 flatlined)"]
+        R6 --> R7["Rule 7: Hampel Filter Impulse Spikes (13h, 6 MAD)"]
+        R7 --> R8["Rule 8: Offline Maintenance Downtime Removal"]
     end
 
-    subgraph S3["3. Cleaning & Quality Assurance"]
-        MONGO --> DEDUP["Deduplication\n(Purged 1,080 dupes)"]
-        DEDUP --> BOUNDS["Physical Guardrails\n(Capped impossible spikes)"]
-        BOUNDS --> SPLINE["Spline Interpolation\n(100% Completeness)"]
-        SPLINE --> CLEAN_COLL[("MongoDB\nclean_telemetry")]
+    subgraph S3["3. Two-Stage Imputation"]
+        R8 --> IMP1["Stage 3A: Linear Spline (Short gaps <= 4h)"]
+        IMP1 --> IMP2["Stage 3B: Cross-Sensor Model (Block dropouts)"]
+        IMP2 --> POST["Post-Clean Assertions: 0 Nulls, 0 Dupes"]
     end
 
-    subgraph S4["4. Physics & Feature Engineering"]
-        CLEAN_COLL --> KINEMATIC["3D Vibration Magnitude\n& Crest Factor"]
-        CLEAN_COLL --> THERMO["Thermodynamic Gradient\n(T_bearing - T_ambient)"]
-        CLEAN_COLL --> ROLLING["Multi-Scale Rolling Windows\n(1h Short & 6h Baseline)"]
-        KINEMATIC & THERMO & ROLLING --> HEALTH["Composite Health Index\n& 24h Early Warning"]
+    subgraph S4["4. Feature Engineering & Selection"]
+        POST --> FEAT["79 Candidate Features (9 Families)"]
+        FEAT --> PRUNE["Pearson Pruning (|r| > 0.98) -> 59 Kept Features"]
     end
 
-    subgraph S5["5. AI Serving & Dashboards"]
-        HEALTH --> AI_DATA["AI Partitions (Train/Val/Test)\nZero Data Leakage"]
-        HEALTH --> PBI["Power BI Star Schema\n& Executive Dashboard"]
+    subgraph S5["5. Leakage-Safe Split & Storage"]
+        PRUNE --> SPLIT["Chronological Split (Train 65% / 72h Gap / Test 35%)"]
+        SPLIT --> SCALE["StandardScaler (Fitted strictly on Train)"]
+        SCALE --> WAREHOUSE[("SQLite: warehouse.db\nMongoDB Time-Series")]
+        SCALE --> PBI["Power BI Star Schema Tables"]
     end
 ```
 
 ---
 
-## 📊 Experimental Results & Model Benchmarks
+## 🧪 Experimental Validation & Benchmark Results
 
-### 1. Data Cleaning & Validation Audit
-* **Initial Records:** 73,080
-* **Duplicates Purged:** 1,080 redundant transmission packets
-* **Physical Boundary Outliers Filtered:** 72 sensor spikes (e.g., $-999^\circ\text{C}$, $50\text{g}$)
-* **Missing Value Reconstruction:** Reduced nulls from 14,000+ across 6 channels to **0**
-* **Data Completeness Score:** **100.0%**
+### 1. Data Cleaning & Defect Correction
+* **Initial Raw Rows:** 57,311 across 20 machines over 120 operating days.
+* **Unit Mix-Up Fix:** Detected and converted 8,533 temperature readings from Fahrenheit to Celsius on machines `M004`, `M011`, and `M017`.
+* **Duplicates Purged:** 1,014 duplicate records dropped on `(machine_id, hour)`.
+* **Sensor Outliers Blanked:** 7,375 physical range violations + 1,214 Hampel spikes + 68 flat-lined readings.
+* **Data Quality Scorecard:**
 
-### 2. Supervised AI Benchmark (Evaluated on Unseen Machine Lifecycles)
-* **24-Hour Failure Early-Warning Classifier (Random Forest):**
-  * **ROC-AUC Score:** `1.0000`
-  * **Macro F1-Score:** `0.9988`
-  * **Failure Recall:** `99.59%` (1,685 out of 1,692 early-warning windows detected)
-  * **Accuracy:** `99.95%`
-* **Remaining Useful Life (RUL) Regressor (Random Forest):**
-  * **RMSE:** `20.16 Operating Hours`
-  * **Coefficient of Determination ($R^2$):** `0.9882`
+| Dimension | Definition | Raw Feed | Cleaned Feed |
+| :--- | :--- | :--- | :--- |
+| **Completeness** | Share of sensor cells that are non-missing | 96.95% | **100.0%** |
+| **Validity** | Share of cells free of range violations, spikes, stuck values, and unit errors | 97.03% | **100.0%** |
+| **Uniqueness** | Share of rows that are not duplicates on (machine, hour) | 99.01% | **100.0%** |
+| **Consistency** | Share of ID and timestamp fields in canonical form | 89.97% | **100.0%** |
+
+### 2. Imputation Experiment: Hide-and-Recover Error
+1,500 known sensor values were hidden and recovered using 5 imputation techniques (MAE comparison):
+
+| Sensor | Gap Type | Global Mean | Machine Median | Forward Fill | Linear Interp. | Cross-Sensor Model |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Temperature** | Single points | 3.377 | 3.080 | 1.707 | 1.486 | **1.397** |
+| **Temperature** | 12-hour blocks | 3.813 | 3.593 | 2.440 | 1.888 | **1.387** |
+| **Vibration** | Single points | 0.677 | 0.589 | 0.288 | **0.258** | 0.290 |
+| **Vibration** | 12-hour blocks | 0.751 | 0.658 | 0.333 | 0.313 | **0.289** |
+
+*Finding:* Cross-sensor regression achieves 26% lower error than interpolation for multi-hour block dropouts by leveraging the remaining five operational sensors.
+
+### 3. Supervised Model Readiness (Test Period Evaluation)
+
+| Metric | Raw Sensors Only (6 Features) | Engineered Dataset (59 Features) |
+| :--- | :--- | :--- |
+| **ROC-AUC** | 0.9995 | **1.0000** |
+| **PR-AUC** | 0.9675 | **0.9999** |
+| **Precision** | 0.940 | **0.998** |
+| **Recall** | 0.986 | **0.990** |
+| **Macro F1-Score** | 0.962 | **0.994** |
+| **RUL Error (MAE)** | 55.9 Hours (Naive Guess) | **28.0 Hours** |
 
 ---
 
-## 📈 Diagnostic Figures
+## 📈 Power BI Data Model (Star Schema)
 
-| Figure | Description |
-| :--- | :--- |
-| ![Figure 1](reports/figures/fig1_data_cleaning_validation.png) | **Figure 1:** Raw vs Cleaned Telemetry Waveforms (Outlier removal & temporal spline interpolation). |
-| ![Figure 2](reports/figures/fig2_degradation_health_index.png) | **Figure 2:** Machine Degradation Signature & Composite Health Index Progression over 1,200 hours. |
-| ![Figure 3](reports/figures/fig3_feature_importance.png) | **Figure 3:** Top 15 Predictive Features ranked by Random Forest Relative Importance. |
-| ![Figure 4](reports/figures/fig4_correlation_heatmap.png) | **Figure 4:** Inter-Feature Pearson Correlation Heatmap across engineered variables. |
+The analytical store implements a dimensional **Star Schema** in `powerbi/` with 1-to-many relationships:
+* `dim_machine[machine_id]` ➔ `fact_sensor_hourly[machine_id]` (1 : *)
+* `dim_machine[machine_id]` ➔ `fact_sensor_daily[machine_id]` (1 : *)
+* `dim_machine[machine_id]` ➔ `fact_maintenance[machine_id]` (1 : *)
+* `DimDate[Date]` ➔ `fact_sensor_daily[date]` (1 : *)
 
----
-
-## 📈 Power BI Solution & DAX Measures
-
-The analytical presentation layer implements a **Kimball Star Schema** (`Fact_Telemetry`, `Dim_Machine`, `Dim_Date`, `Dim_FailureModes`):
-
+### Core Production DAX Measures
 ```dax
-// 1. Fleet Health Index
-[Fleet Health Index %] = AVERAGE(Fact_Telemetry[health_index_pct])
+// 1. Average Fleet Vibration
+Avg Vibration = AVERAGE ( fact_sensor_daily[avg_vibration] )
 
-// 2. Active 24h Early Warning Alerts
-[Active 24h Alerts] = 
-CALCULATE(
-    DISTINCTCOUNT(Fact_Telemetry[MachineKey]),
-    Fact_Telemetry[failure_in_next_24h] = 1,
-    Fact_Telemetry[DateKey] = MAX(Fact_Telemetry[DateKey])
+// 2. Machine Failure Count
+Failure Count = 
+CALCULATE ( 
+    COUNTROWS ( fact_maintenance ), 
+    fact_maintenance[event_type] = "FAILURE" 
 )
 
-// 3. Mean Time Between Failures (MTBF)
-[MTBF (Hours)] = 
-DIVIDE(
-    SUM(Fact_Telemetry[operational_hours]),
-    CALCULATE(COUNTROWS(Fact_Telemetry), Fact_Telemetry[failure_occurred] = 1),
-    BLANK()
+// 3. Total Unscheduled Downtime Hours
+Downtime Hours = 
+CALCULATE ( 
+    SUM ( fact_maintenance[downtime_hours] ), 
+    fact_maintenance[event_type] = "FAILURE" 
 )
 
-// 4. Financial Cost Avoidance ($)
-[Cost Avoidance ($)] = 
-VAR Prevented = CALCULATE(COUNTROWS(Fact_Telemetry), Fact_Telemetry[failure_in_next_24h] = 1 && Fact_Telemetry[failure_occurred] = 0)
-RETURN Prevented * (28000 - 3500)
+// 4. Mean Time Between Failures (MTBF)
+Operating Hours = SUM ( fact_sensor_daily[readings] )
+MTBF (hours) = DIVIDE ( [Operating Hours], [Failure Count] )
+
+// 5. Active High Risk Machines (72-Hour Horizon)
+Machines At Risk = 
+CALCULATE ( 
+    DISTINCTCOUNT ( fact_sensor_daily[machine_id] ), 
+    fact_sensor_daily[failure_risk_window] = 1 
+)
+
+// 6. Data Quality Imputed Cell Share %
+Imputed Share % = 
+DIVIDE ( 
+    SUM ( fact_sensor_daily[imputed_cells] ), 
+    SUM ( fact_sensor_daily[readings] ) * 6 
+)
 ```
 
 ---
@@ -163,28 +218,31 @@ cd AI-Ready-Predictive-Maintenance-Pipeline
 pip install -r requirements.txt
 ```
 
-### 2. Run the Complete Data Pipeline
+### 2. Generate Simulated Multi-Source Telemetry
+```bash
+python src/generate_data.py
+```
+
+### 3. Run the End-to-End Pipeline
+Ingests sources, executes the 8 validation rules, runs two-stage imputation, prunes features, and generates `warehouse.db` and AI datasets:
 ```bash
 python src/pipeline.py
 ```
 
-### 3. Generate High-Resolution Visual Figures
+### 4. Run Baseline AI Model Verification
 ```bash
-python src/generate_visual_artifacts.py
+python src/model_check.py
 ```
 
-### 4. Build Submission Word (.docx) & PDF Reports
+### 5. Export Power BI Star Schema Tables
 ```bash
-python src/generate_full_submission_docx.py
+python src/dashboard.py
 ```
-
-### 5. Launch Interactive Web Dashboard
-Open `dashboard/dashboard_preview.html` in any modern web browser to view interactive KPI scorecards, degradation trends, and asset health tables.
 
 ---
 
-## 📜 Citation & Credits
-* **Curriculum & Statement:** L&T EduTech — Larsen & Toubro Limited
-* **Project Statement:** Statement 6 (AI-Ready Data Engineering Pipeline for Predictive Maintenance)
+## 📜 Citation & Academic Details
+* **Organization:** Larsen & Toubro Limited — L&T EduTech
+* **Project Statement:** Project Statement 6 (AI-Ready Data Engineering Pipeline for Predictive Maintenance)
 * **Author:** Ujjval ([@UjjvxL](https://github.com/UjjvxL))
-* **Standards Reference:** ISO 10816-3 & ISO 20816-1 Mechanical Vibration Condition Monitoring
+* **Standards Reference:** ISO 10816-3 & ISO 20816-1 Vibration Severity Standards

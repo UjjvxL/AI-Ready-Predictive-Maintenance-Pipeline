@@ -1,0 +1,8 @@
+Defect_Category,Count
+Unit Inconsistencies (deg F),8533
+Physical Out-of-Range Values,7375
+Hampel Impulse Spikes,1214
+Machine ID Whitespace & Casing,1114
+Duplicate Rows Purged,1014
+Offline Downtime Purged,721
+Stuck / Frozen Sensor Readings,68

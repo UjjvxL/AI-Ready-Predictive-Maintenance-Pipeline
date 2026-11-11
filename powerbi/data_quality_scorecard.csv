@@ -1,0 +1,5 @@
+Dimension,Definition,Raw,Cleaned
+Completeness,Share of sensor cells that are non-missing,96.95%,100%
+Validity,"Share of cells free of range violations, spikes, stuck values and unit errors",97.03%,100%
+Uniqueness,"Share of rows that are not duplicates on (machine, hour)",99.01%,100%
+Consistency,Share of ID and timestamp fields already in canonical form,89.97%,100%

@@ -1,0 +1,18 @@
+{
+  "raw_sensor_rows": 57311,
+  "cleaned_rows": 55576,
+  "duplicates_removed": 1014,
+  "fahrenheit_converted_rows": 8456,
+  "out_of_range_values_blanked": 7375,
+  "stuck_values_blanked": 68,
+  "spikes_blanked": 1214,
+  "downtime_hours_removed": 721,
+  "total_imputed_values": 19261,
+  "candidate_features": 87,
+  "pruned_features": 28,
+  "kept_features": 59,
+  "ai_ready_rows": 54159,
+  "train_rows": 35818,
+  "gap_rows": 1417,
+  "test_rows": 18341
+}

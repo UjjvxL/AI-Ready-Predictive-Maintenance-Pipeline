@@ -1,0 +1,88 @@
+Feature,Family,Status
+temperature,Raw sensor values,Kept
+vibration,Raw sensor values,Kept
+pressure,Raw sensor values,Kept
+rpm,Raw sensor values,Kept
+current,Raw sensor values,Kept
+oil_quality,Raw sensor values,Kept
+rated_rpm,Engineered,Pruned
+rated_power_kw,Engineered,Kept
+temperature_mean_6h,Rolling statistics,Kept
+temperature_std_6h,Rolling statistics,Kept
+temperature_max_6h,Rolling statistics,Pruned
+temperature_min_6h,Rolling statistics,Pruned
+temperature_mean_24h,Rolling statistics,Kept
+temperature_std_24h,Rolling statistics,Kept
+temperature_max_24h,Rolling statistics,Kept
+temperature_min_24h,Rolling statistics,Kept
+vibration_mean_6h,Rolling statistics,Kept
+vibration_std_6h,Rolling statistics,Kept
+vibration_max_6h,Rolling statistics,Pruned
+vibration_min_6h,Rolling statistics,Pruned
+vibration_mean_24h,Rolling statistics,Kept
+vibration_std_24h,Rolling statistics,Kept
+vibration_max_24h,Rolling statistics,Kept
+vibration_min_24h,Rolling statistics,Pruned
+pressure_mean_6h,Rolling statistics,Pruned
+pressure_std_6h,Rolling statistics,Kept
+pressure_max_6h,Rolling statistics,Pruned
+pressure_min_6h,Rolling statistics,Pruned
+pressure_mean_24h,Rolling statistics,Pruned
+pressure_std_24h,Rolling statistics,Kept
+pressure_max_24h,Rolling statistics,Pruned
+pressure_min_24h,Rolling statistics,Pruned
+rpm_mean_6h,Rolling statistics,Pruned
+rpm_std_6h,Rolling statistics,Kept
+rpm_max_6h,Rolling statistics,Pruned
+rpm_min_6h,Rolling statistics,Pruned
+rpm_mean_24h,Rolling statistics,Pruned
+rpm_std_24h,Rolling statistics,Kept
+rpm_max_24h,Rolling statistics,Pruned
+rpm_min_24h,Rolling statistics,Pruned
+current_mean_6h,Rolling statistics,Pruned
+current_std_6h,Rolling statistics,Kept
+current_max_6h,Rolling statistics,Pruned
+current_min_6h,Rolling statistics,Pruned
+current_mean_24h,Rolling statistics,Pruned
+current_std_24h,Rolling statistics,Kept
+current_max_24h,Rolling statistics,Pruned
+current_min_24h,Rolling statistics,Pruned
+oil_quality_mean_6h,Rolling statistics,Kept
+oil_quality_std_6h,Rolling statistics,Kept
+oil_quality_max_6h,Rolling statistics,Pruned
+oil_quality_min_6h,Rolling statistics,Pruned
+oil_quality_mean_24h,Rolling statistics,Kept
+oil_quality_std_24h,Rolling statistics,Kept
+oil_quality_max_24h,Rolling statistics,Pruned
+oil_quality_min_24h,Rolling statistics,Kept
+temperature_diff_1h,Engineered,Kept
+temperature_diff_6h,Engineered,Kept
+vibration_diff_1h,Engineered,Kept
+vibration_diff_6h,Engineered,Kept
+pressure_diff_1h,Engineered,Kept
+pressure_diff_6h,Engineered,Kept
+rpm_diff_1h,Engineered,Kept
+rpm_diff_6h,Engineered,Kept
+current_diff_1h,Engineered,Kept
+current_diff_6h,Engineered,Kept
+oil_quality_diff_1h,Engineered,Kept
+oil_quality_diff_6h,Engineered,Kept
+temperature_ewm_12h,Engineered,Pruned
+temperature_slope_24h,Engineered,Kept
+vibration_ewm_12h,Engineered,Kept
+vibration_slope_24h,Engineered,Kept
+oil_quality_ewm_12h,Engineered,Kept
+oil_quality_slope_24h,Engineered,Kept
+temperature_base_zscore,Engineered,Kept
+vibration_base_zscore,Engineered,Kept
+pressure_base_zscore,Engineered,Kept
+vib_per_amp,Engineered,Kept
+temp_to_pressure,Engineered,Kept
+power_proxy,Engineered,Kept
+days_since_install,Engineered,Kept
+sin_hour,Engineered,Kept
+cos_hour,Engineered,Kept
+type_Compressor,Engineered,Kept
+type_Motor,Engineered,Kept
+type_Pump,Engineered,Kept
+type_Turbine,Engineered,Kept

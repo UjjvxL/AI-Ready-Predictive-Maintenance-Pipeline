@@ -1,0 +1,762 @@
+[
+  {
+    "machine_id": "M016",
+    "event_ts": "2025-01-06 13:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.2,
+    "cost_inr": 52017
+  },
+  {
+    "machine_id": "M005",
+    "event_ts": "2025-01-12 23:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.3,
+    "cost_inr": 38910
+  },
+  {
+    "machine_id": "M012",
+    "event_ts": "2025-01-13 13:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.0,
+    "cost_inr": 29435
+  },
+  {
+    "machine_id": "M006",
+    "event_ts": "2025-01-14 20:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 6.0,
+    "cost_inr": 15227
+  },
+  {
+    "machine_id": "M008",
+    "event_ts": "2025-01-19 02:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.0,
+    "cost_inr": 20106
+  },
+  {
+    "machine_id": "M003",
+    "event_ts": "2025-01-19 22:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.9,
+    "cost_inr": 59354
+  },
+  {
+    "machine_id": "M001",
+    "event_ts": "2025-01-21 08:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 11.9,
+    "cost_inr": 188093
+  },
+  {
+    "machine_id": "M012",
+    "event_ts": "2025-01-21 19:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.3,
+    "cost_inr": 46135
+  },
+  {
+    "machine_id": "M011",
+    "event_ts": "2025-01-22 19:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.3,
+    "cost_inr": 57126
+  },
+  {
+    "machine_id": "M015",
+    "event_ts": "2025-01-23 17:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.6,
+    "cost_inr": 57926
+  },
+  {
+    "machine_id": "M019",
+    "event_ts": "2025-01-24 19:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.2,
+    "cost_inr": 41590
+  },
+  {
+    "machine_id": "M004",
+    "event_ts": "2025-01-24 23:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 9.0,
+    "cost_inr": 416448
+  },
+  {
+    "machine_id": "M020",
+    "event_ts": "2025-01-28 23:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.7,
+    "cost_inr": 30192
+  },
+  {
+    "machine_id": "M003",
+    "event_ts": "2025-01-29 12:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.9,
+    "cost_inr": 22846
+  },
+  {
+    "machine_id": "M007",
+    "event_ts": "2025-01-30 10:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Overheating",
+    "downtime_hours": 18.9,
+    "cost_inr": 180399
+  },
+  {
+    "machine_id": "M007",
+    "event_ts": "2025-01-30 18:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.0,
+    "cost_inr": 48592
+  },
+  {
+    "machine_id": "M010",
+    "event_ts": "2025-01-30 19:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 6.4,
+    "cost_inr": 31550
+  },
+  {
+    "machine_id": "M018",
+    "event_ts": "2025-01-31 07:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 6.0,
+    "cost_inr": 49272
+  },
+  {
+    "machine_id": "M015",
+    "event_ts": "2025-01-31 10:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Electrical fault",
+    "downtime_hours": 16.8,
+    "cost_inr": 268171
+  },
+  {
+    "machine_id": "M012",
+    "event_ts": "2025-01-31 18:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Electrical fault",
+    "downtime_hours": 25.9,
+    "cost_inr": 408268
+  },
+  {
+    "machine_id": "M018",
+    "event_ts": "2025-02-01 00:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 13.2,
+    "cost_inr": 410246
+  },
+  {
+    "machine_id": "M020",
+    "event_ts": "2025-02-03 00:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.5,
+    "cost_inr": 58785
+  },
+  {
+    "machine_id": "M013",
+    "event_ts": "2025-02-04 14:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.4,
+    "cost_inr": 25780
+  },
+  {
+    "machine_id": "M006",
+    "event_ts": "2025-02-04 20:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.1,
+    "cost_inr": 44046
+  },
+  {
+    "machine_id": "M013",
+    "event_ts": "2025-02-06 08:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 6.9,
+    "cost_inr": 51455
+  },
+  {
+    "machine_id": "M018",
+    "event_ts": "2025-02-07 04:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.7,
+    "cost_inr": 16659
+  },
+  {
+    "machine_id": "M008",
+    "event_ts": "2025-02-08 13:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 35.6,
+    "cost_inr": 365730
+  },
+  {
+    "machine_id": "M001",
+    "event_ts": "2025-02-09 13:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 20.8,
+    "cost_inr": 370515
+  },
+  {
+    "machine_id": "M009",
+    "event_ts": "2025-02-10 16:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Seal leak",
+    "downtime_hours": 28.4,
+    "cost_inr": 365370
+  },
+  {
+    "machine_id": "M019",
+    "event_ts": "2025-02-11 13:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.3,
+    "cost_inr": 19229
+  },
+  {
+    "machine_id": "M013",
+    "event_ts": "2025-02-11 15:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.1,
+    "cost_inr": 47668
+  },
+  {
+    "machine_id": "M013",
+    "event_ts": "2025-02-14 03:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.8,
+    "cost_inr": 38500
+  },
+  {
+    "machine_id": "M008",
+    "event_ts": "2025-02-17 01:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.1,
+    "cost_inr": 29261
+  },
+  {
+    "machine_id": "M004",
+    "event_ts": "2025-02-17 04:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 26.6,
+    "cost_inr": 195333
+  },
+  {
+    "machine_id": "M006",
+    "event_ts": "2025-02-17 23:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.4,
+    "cost_inr": 43401
+  },
+  {
+    "machine_id": "M020",
+    "event_ts": "2025-02-28 08:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Electrical fault",
+    "downtime_hours": 22.3,
+    "cost_inr": 234442
+  },
+  {
+    "machine_id": "M014",
+    "event_ts": "2025-02-28 10:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Electrical fault",
+    "downtime_hours": 11.0,
+    "cost_inr": 91628
+  },
+  {
+    "machine_id": "M011",
+    "event_ts": "2025-02-28 13:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Overheating",
+    "downtime_hours": 16.7,
+    "cost_inr": 200317
+  },
+  {
+    "machine_id": "M006",
+    "event_ts": "2025-02-28 15:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Overheating",
+    "downtime_hours": 13.5,
+    "cost_inr": 96734
+  },
+  {
+    "machine_id": "M001",
+    "event_ts": "2025-02-28 23:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 22.4,
+    "cost_inr": 299193
+  },
+  {
+    "machine_id": "M016",
+    "event_ts": "2025-03-01 07:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Electrical fault",
+    "downtime_hours": 12.5,
+    "cost_inr": 423988
+  },
+  {
+    "machine_id": "M008",
+    "event_ts": "2025-03-01 14:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.2,
+    "cost_inr": 47510
+  },
+  {
+    "machine_id": "M019",
+    "event_ts": "2025-03-01 18:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Electrical fault",
+    "downtime_hours": 30.9,
+    "cost_inr": 398470
+  },
+  {
+    "machine_id": "M012",
+    "event_ts": "2025-03-01 21:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 11.3,
+    "cost_inr": 343900
+  },
+  {
+    "machine_id": "M013",
+    "event_ts": "2025-03-01 23:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Seal leak",
+    "downtime_hours": 22.6,
+    "cost_inr": 238190
+  },
+  {
+    "machine_id": "M018",
+    "event_ts": "2025-03-02 03:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Seal leak",
+    "downtime_hours": 30.6,
+    "cost_inr": 411553
+  },
+  {
+    "machine_id": "M003",
+    "event_ts": "2025-03-02 14:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Seal leak",
+    "downtime_hours": 20.3,
+    "cost_inr": 125154
+  },
+  {
+    "machine_id": "M003",
+    "event_ts": "2025-03-02 16:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 6.8,
+    "cost_inr": 44248
+  },
+  {
+    "machine_id": "M002",
+    "event_ts": "2025-03-03 00:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Overheating",
+    "downtime_hours": 16.5,
+    "cost_inr": 116138
+  },
+  {
+    "machine_id": "M017",
+    "event_ts": "2025-03-03 00:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 25.7,
+    "cost_inr": 402440
+  },
+  {
+    "machine_id": "M007",
+    "event_ts": "2025-03-03 02:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 18.0,
+    "cost_inr": 183945
+  },
+  {
+    "machine_id": "M010",
+    "event_ts": "2025-03-03 05:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Seal leak",
+    "downtime_hours": 25.5,
+    "cost_inr": 202432
+  },
+  {
+    "machine_id": "M005",
+    "event_ts": "2025-03-03 07:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 24.7,
+    "cost_inr": 421093
+  },
+  {
+    "machine_id": "M015",
+    "event_ts": "2025-03-03 08:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 15.0,
+    "cost_inr": 231841
+  },
+  {
+    "machine_id": "M002",
+    "event_ts": "2025-03-04 15:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.3,
+    "cost_inr": 48334
+  },
+  {
+    "machine_id": "M008",
+    "event_ts": "2025-03-05 23:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.5,
+    "cost_inr": 19189
+  },
+  {
+    "machine_id": "M009",
+    "event_ts": "2025-03-07 06:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.8,
+    "cost_inr": 47674
+  },
+  {
+    "machine_id": "M007",
+    "event_ts": "2025-03-07 11:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.7,
+    "cost_inr": 41587
+  },
+  {
+    "machine_id": "M003",
+    "event_ts": "2025-03-10 11:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.6,
+    "cost_inr": 31547
+  },
+  {
+    "machine_id": "M011",
+    "event_ts": "2025-03-11 15:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.2,
+    "cost_inr": 35951
+  },
+  {
+    "machine_id": "M004",
+    "event_ts": "2025-03-14 01:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 23.3,
+    "cost_inr": 148396
+  },
+  {
+    "machine_id": "M004",
+    "event_ts": "2025-03-15 07:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.0,
+    "cost_inr": 17316
+  },
+  {
+    "machine_id": "M008",
+    "event_ts": "2025-03-15 22:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.9,
+    "cost_inr": 21303
+  },
+  {
+    "machine_id": "M020",
+    "event_ts": "2025-03-17 23:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.8,
+    "cost_inr": 39109
+  },
+  {
+    "machine_id": "M015",
+    "event_ts": "2025-03-19 02:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.5,
+    "cost_inr": 22273
+  },
+  {
+    "machine_id": "M009",
+    "event_ts": "2025-03-20 00:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.1,
+    "cost_inr": 44592
+  },
+  {
+    "machine_id": "M012",
+    "event_ts": "2025-03-20 06:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.3,
+    "cost_inr": 47048
+  },
+  {
+    "machine_id": "M001",
+    "event_ts": "2025-03-20 11:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Overheating",
+    "downtime_hours": 25.0,
+    "cost_inr": 143093
+  },
+  {
+    "machine_id": "M009",
+    "event_ts": "2025-03-20 13:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 18.0,
+    "cost_inr": 122871
+  },
+  {
+    "machine_id": "M008",
+    "event_ts": "2025-03-20 23:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Overheating",
+    "downtime_hours": 8.2,
+    "cost_inr": 381720
+  },
+  {
+    "machine_id": "M003",
+    "event_ts": "2025-03-21 05:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 6.9,
+    "cost_inr": 39984
+  },
+  {
+    "machine_id": "M007",
+    "event_ts": "2025-03-23 06:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 2.1,
+    "cost_inr": 38044
+  },
+  {
+    "machine_id": "M002",
+    "event_ts": "2025-03-24 20:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.3,
+    "cost_inr": 57152
+  },
+  {
+    "machine_id": "M002",
+    "event_ts": "2025-03-25 10:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.4,
+    "cost_inr": 19372
+  },
+  {
+    "machine_id": "M011",
+    "event_ts": "2025-03-25 13:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 6.2,
+    "cost_inr": 31177
+  },
+  {
+    "machine_id": "M007",
+    "event_ts": "2025-03-26 03:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 6.8,
+    "cost_inr": 55050
+  },
+  {
+    "machine_id": "M002",
+    "event_ts": "2025-03-26 06:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.2,
+    "cost_inr": 58730
+  },
+  {
+    "machine_id": "M018",
+    "event_ts": "2025-03-31 09:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 11.1,
+    "cost_inr": 164336
+  },
+  {
+    "machine_id": "M007",
+    "event_ts": "2025-04-01 03:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Overheating",
+    "downtime_hours": 11.9,
+    "cost_inr": 376812
+  },
+  {
+    "machine_id": "M012",
+    "event_ts": "2025-04-01 20:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 23.7,
+    "cost_inr": 365257
+  },
+  {
+    "machine_id": "M015",
+    "event_ts": "2025-04-01 20:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 14.4,
+    "cost_inr": 108482
+  },
+  {
+    "machine_id": "M015",
+    "event_ts": "2025-04-03 02:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.3,
+    "cost_inr": 43030
+  },
+  {
+    "machine_id": "M018",
+    "event_ts": "2025-04-05 23:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.0,
+    "cost_inr": 40960
+  },
+  {
+    "machine_id": "M004",
+    "event_ts": "2025-04-08 13:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Imbalance",
+    "downtime_hours": 29.7,
+    "cost_inr": 427614
+  },
+  {
+    "machine_id": "M001",
+    "event_ts": "2025-04-09 13:00:00",
+    "event_type": "FAILURE",
+    "failure_mode": "Bearing wear",
+    "downtime_hours": 34.6,
+    "cost_inr": 437283
+  },
+  {
+    "machine_id": "M009",
+    "event_ts": "2025-04-14 10:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.5,
+    "cost_inr": 38010
+  },
+  {
+    "machine_id": "M004",
+    "event_ts": "2025-04-17 23:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.4,
+    "cost_inr": 43489
+  },
+  {
+    "machine_id": "M009",
+    "event_ts": "2025-04-17 23:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.3,
+    "cost_inr": 50094
+  },
+  {
+    "machine_id": "M012",
+    "event_ts": "2025-04-18 03:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 5.6,
+    "cost_inr": 15413
+  },
+  {
+    "machine_id": "M013",
+    "event_ts": "2025-04-20 00:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.2,
+    "cost_inr": 15695
+  },
+  {
+    "machine_id": "M010",
+    "event_ts": "2025-04-21 04:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.3,
+    "cost_inr": 26607
+  },
+  {
+    "machine_id": "M009",
+    "event_ts": "2025-04-21 14:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 4.6,
+    "cost_inr": 58499
+  },
+  {
+    "machine_id": "M009",
+    "event_ts": "2025-04-23 07:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.9,
+    "cost_inr": 38345
+  },
+  {
+    "machine_id": "M015",
+    "event_ts": "2025-04-25 14:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 3.5,
+    "cost_inr": 37376
+  },
+  {
+    "machine_id": "M018",
+    "event_ts": "2025-04-25 17:00:00",
+    "event_type": "PREVENTIVE",
+    "failure_mode": "Routine overhaul / lubrication",
+    "downtime_hours": 7.1,
+    "cost_inr": 28250
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "classification_test_period": {
+    "raw_sensors_only": {
+      "roc_auc": 0.9995,
+      "pr_auc": 0.9675,
+      "precision": 0.94,
+      "recall": 0.986,
+      "f1": 0.962
+    },
+    "engineered_features": {
+      "roc_auc": 1.0,
+      "pr_auc": 0.9999,
+      "precision": 0.998,
+      "recall": 0.99,
+      "f1": 0.994
+    }
+  },
+  "rul_regression": {
+    "naive_baseline_mae_hours": 55.9,
+    "model_mae_hours": 28.0
+  },
+  "top_10_features": [
+    {
+      "Feature": "vibration_min_6h",
+      "Importance": 0.1322
+    },
+    {
+      "Feature": "vibration_mean_6h",
+      "Importance": 0.1113
+    },
+    {
+      "Feature": "vibration_min_24h",
+      "Importance": 0.1055
+    },
+    {
+      "Feature": "vibration_ewm_12h",
+      "Importance": 0.0822
+    },
+    {
+      "Feature": "vibration_max_6h",
+      "Importance": 0.0636
+    },
+    {
+      "Feature": "vibration_base_zscore",
+      "Importance": 0.056
+    },
+    {
+      "Feature": "temperature_base_zscore",
+      "Importance": 0.0558
+    },
+    {
+      "Feature": "vibration",
+      "Importance": 0.0508
+    },
+    {
+      "Feature": "pressure_base_zscore",
+      "Importance": 0.0341
+    },
+    {
+      "Feature": "vibration_slope_24h",
+      "Importance": 0.0329
+    }
+  ]
+}
