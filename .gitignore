@@ -1,0 +1,19 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Environments & IDEs
+.venv/
+venv/
+ENV/
+.vscode/
+.idea/
+
+# Large local raw JSON stores (regenerated dynamically by pipeline)
+data/mongodb_store/*.json
+
+# Logs & scratch
+*.log
+.DS_Store

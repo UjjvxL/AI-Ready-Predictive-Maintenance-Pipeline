@@ -1,0 +1,19 @@
+{
+  "total_features": 42,
+  "total_samples": 72000,
+  "failure_distribution": {
+    "No_Failure": 63184,
+    "Tool_Wear_Failure": 5199,
+    "Heat_Dissipation_Failure": 1911,
+    "Bearing_Degradation": 1706
+  },
+  "early_warning_24h_positives": 8816,
+  "early_warning_24h_rate_pct": 12.24,
+  "risk_category_breakdown": {
+    "Normal": 56379,
+    "Critical": 10735,
+    "Warning": 3110,
+    "Elevated_Risk": 1776
+  },
+  "mean_health_index": 77.84
+}

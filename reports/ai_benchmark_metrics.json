@@ -1,0 +1,44 @@
+{
+  "features_count": 34,
+  "train_samples": 50400,
+  "val_samples": 7200,
+  "test_samples": 14400,
+  "classification_metrics": {
+    "roc_auc_score": 1.0,
+    "precision_failure": 1.0,
+    "recall_failure": 0.9959,
+    "f1_score_failure": 0.9979,
+    "accuracy": 0.9995,
+    "confusion_matrix": [
+      [
+        12708,
+        0
+      ],
+      [
+        7,
+        1685
+      ]
+    ]
+  },
+  "rul_regression_metrics": {
+    "rmse_hours": 20.16,
+    "r2_score": 0.9882
+  },
+  "top_15_important_features": {
+    "temp_diff_roll_mean_6h": 0.16974,
+    "acoustic_roll_mean_1h": 0.1065,
+    "temp_diff_roll_mean_1h": 0.10108,
+    "vib_mag_roll_mean_6h": 0.0954,
+    "health_index_pct": 0.07279,
+    "temp_difference_c": 0.07157,
+    "operational_hours": 0.06934,
+    "acoustic_emission_db": 0.05468,
+    "vib_mag_roll_std_6h": 0.0538,
+    "vibration_magnitude_g": 0.03907,
+    "vib_mag_roll_mean_1h": 0.03631,
+    "vib_rms_1h": 0.0356,
+    "bearing_temperature_c": 0.03166,
+    "tool_wear_min": 0.02906,
+    "vib_mag_roll_std_1h": 0.02215
+  }
+}
