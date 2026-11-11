@@ -244,5 +244,5 @@ python src/dashboard.py
 ## 📜 Citation & Academic Details
 * **Organization:** Larsen & Toubro Limited — L&T EduTech
 * **Project Statement:** Project Statement 6 (AI-Ready Data Engineering Pipeline for Predictive Maintenance)
-* **Author:** Ujjval ([@UjjvxL](https://github.com/UjjvxL))
+* **Author:** Ujjval Dubey and Birbahadur ([@UjjvxL](https://github.com/UjjvxL))
 * **Standards Reference:** ISO 10816-3 & ISO 20816-1 Vibration Severity Standards
